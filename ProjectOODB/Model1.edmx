@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="LaundryModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="LaundryModelStoreContainer">
+          <EntitySet Name="DetailTransaction" EntityType="LaundryModel.Store.DetailTransaction" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="HeaderTransaction" EntityType="LaundryModel.Store.HeaderTransaction" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PriceList" EntityType="LaundryModel.Store.PriceList" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Review" EntityType="LaundryModel.Store.Review" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Users" EntityType="LaundryModel.Store.Users" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_DetailTransaction_HeaderTransaction" Association="LaundryModel.Store.FK_DetailTransaction_HeaderTransaction">
+            <End Role="HeaderTransaction" EntitySet="HeaderTransaction" />
+            <End Role="DetailTransaction" EntitySet="DetailTransaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DetailTransaction_PriceList" Association="LaundryModel.Store.FK_DetailTransaction_PriceList">
+            <End Role="PriceList" EntitySet="PriceList" />
+            <End Role="DetailTransaction" EntitySet="DetailTransaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HeaderTransaction_Users" Association="LaundryModel.Store.FK_HeaderTransaction_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="HeaderTransaction" EntitySet="HeaderTransaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Review_PriceList" Association="LaundryModel.Store.FK_Review_PriceList">
+            <End Role="PriceList" EntitySet="PriceList" />
+            <End Role="Review" EntitySet="Review" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Review_Users" Association="LaundryModel.Store.FK_Review_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Review" EntitySet="Review" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="DetailTransaction">
+          <Key>
+            <PropertyRef Name="TransactionId" />
+            <PropertyRef Name="Productid" />
+          </Key>
+          <Property Name="TransactionId" Type="varchar" Nullable="false" MaxLength="5" />
+          <Property Name="Productid" Type="varchar" Nullable="false" MaxLength="5" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="Price" Type="int" />
+        </EntityType>
+        <EntityType Name="HeaderTransaction">
+          <Key>
+            <PropertyRef Name="TransactionId" />
+          </Key>
+          <Property Name="TransactionId" Type="varchar" Nullable="false" MaxLength="5" />
+          <Property Name="UserId" Type="varchar" MaxLength="5" />
+          <Property Name="Status" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="PriceList">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="varchar" Nullable="false" MaxLength="5" />
+          <Property Name="ProductName" Type="varchar" MaxLength="50" />
+          <Property Name="ProductPrice" Type="int" />
+        </EntityType>
+        <EntityType Name="Review">
+          <Key>
+            <PropertyRef Name="ReviewId" />
+          </Key>
+          <Property Name="ReviewId" Type="varchar" Nullable="false" MaxLength="5" />
+          <Property Name="Review" Type="varchar" MaxLength="255" />
+          <Property Name="ProductId" Type="varchar" MaxLength="5" />
+          <Property Name="UserId" Type="varchar" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="varchar" Nullable="false" MaxLength="5" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" />
+          <Property Name="UserPassword" Type="varchar" MaxLength="50" />
+          <Property Name="UserEmail" Type="varchar" MaxLength="50" />
+          <Property Name="UserAddress" Type="varchar" MaxLength="50" />
+          <Property Name="UserPhoneNumber" Type="varchar" MaxLength="15" />
+          <Property Name="RoleName" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <Association Name="FK_DetailTransaction_HeaderTransaction">
+          <End Role="HeaderTransaction" Type="LaundryModel.Store.HeaderTransaction" Multiplicity="1" />
+          <End Role="DetailTransaction" Type="LaundryModel.Store.DetailTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HeaderTransaction">
+              <PropertyRef Name="TransactionId" />
+            </Principal>
+            <Dependent Role="DetailTransaction">
+              <PropertyRef Name="TransactionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DetailTransaction_PriceList">
+          <End Role="PriceList" Type="LaundryModel.Store.PriceList" Multiplicity="1" />
+          <End Role="DetailTransaction" Type="LaundryModel.Store.DetailTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PriceList">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="DetailTransaction">
+              <PropertyRef Name="Productid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HeaderTransaction_Users">
+          <End Role="Users" Type="LaundryModel.Store.Users" Multiplicity="0..1" />
+          <End Role="HeaderTransaction" Type="LaundryModel.Store.HeaderTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="HeaderTransaction">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Review_PriceList">
+          <End Role="PriceList" Type="LaundryModel.Store.PriceList" Multiplicity="0..1" />
+          <End Role="Review" Type="LaundryModel.Store.Review" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PriceList">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="Review">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Review_Users">
+          <End Role="Users" Type="LaundryModel.Store.Users" Multiplicity="0..1" />
+          <End Role="Review" Type="LaundryModel.Store.Review" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Review">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LaundryModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="LaundryEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DetailTransactions" EntityType="LaundryModel.DetailTransaction" />
+          <EntitySet Name="HeaderTransactions" EntityType="LaundryModel.HeaderTransaction" />
+          <EntitySet Name="PriceLists" EntityType="LaundryModel.PriceList" />
+          <EntitySet Name="Reviews" EntityType="LaundryModel.Review" />
+          <EntitySet Name="Users" EntityType="LaundryModel.User" />
+          <AssociationSet Name="FK_DetailTransaction_HeaderTransaction" Association="LaundryModel.FK_DetailTransaction_HeaderTransaction">
+            <End Role="HeaderTransaction" EntitySet="HeaderTransactions" />
+            <End Role="DetailTransaction" EntitySet="DetailTransactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DetailTransaction_PriceList" Association="LaundryModel.FK_DetailTransaction_PriceList">
+            <End Role="PriceList" EntitySet="PriceLists" />
+            <End Role="DetailTransaction" EntitySet="DetailTransactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HeaderTransaction_Users" Association="LaundryModel.FK_HeaderTransaction_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="HeaderTransaction" EntitySet="HeaderTransactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Review_PriceList" Association="LaundryModel.FK_Review_PriceList">
+            <End Role="PriceList" EntitySet="PriceLists" />
+            <End Role="Review" EntitySet="Reviews" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Review_Users" Association="LaundryModel.FK_Review_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Review" EntitySet="Reviews" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="DetailTransaction">
+          <Key>
+            <PropertyRef Name="TransactionId" />
+            <PropertyRef Name="Productid" />
+          </Key>
+          <Property Name="TransactionId" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="Productid" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="Price" Type="Int32" />
+          <NavigationProperty Name="HeaderTransaction" Relationship="LaundryModel.FK_DetailTransaction_HeaderTransaction" FromRole="DetailTransaction" ToRole="HeaderTransaction" />
+          <NavigationProperty Name="PriceList" Relationship="LaundryModel.FK_DetailTransaction_PriceList" FromRole="DetailTransaction" ToRole="PriceList" />
+        </EntityType>
+        <EntityType Name="HeaderTransaction">
+          <Key>
+            <PropertyRef Name="TransactionId" />
+          </Key>
+          <Property Name="TransactionId" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="UserId" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="Status" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="DetailTransactions" Relationship="LaundryModel.FK_DetailTransaction_HeaderTransaction" FromRole="HeaderTransaction" ToRole="DetailTransaction" />
+          <NavigationProperty Name="User" Relationship="LaundryModel.FK_HeaderTransaction_Users" FromRole="HeaderTransaction" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="PriceList">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="ProductName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ProductPrice" Type="Int32" />
+          <NavigationProperty Name="DetailTransactions" Relationship="LaundryModel.FK_DetailTransaction_PriceList" FromRole="PriceList" ToRole="DetailTransaction" />
+          <NavigationProperty Name="Reviews" Relationship="LaundryModel.FK_Review_PriceList" FromRole="PriceList" ToRole="Review" />
+        </EntityType>
+        <EntityType Name="Review">
+          <Key>
+            <PropertyRef Name="ReviewId" />
+          </Key>
+          <Property Name="ReviewId" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="Review1" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="ProductId" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="UserId" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="PriceList" Relationship="LaundryModel.FK_Review_PriceList" FromRole="Review" ToRole="PriceList" />
+          <NavigationProperty Name="User" Relationship="LaundryModel.FK_Review_Users" FromRole="Review" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="UserName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="UserPassword" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="UserEmail" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="UserAddress" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="UserPhoneNumber" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="RoleName" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="HeaderTransactions" Relationship="LaundryModel.FK_HeaderTransaction_Users" FromRole="Users" ToRole="HeaderTransaction" />
+          <NavigationProperty Name="Reviews" Relationship="LaundryModel.FK_Review_Users" FromRole="Users" ToRole="Review" />
+        </EntityType>
+        <Association Name="FK_DetailTransaction_HeaderTransaction">
+          <End Role="HeaderTransaction" Type="LaundryModel.HeaderTransaction" Multiplicity="1" />
+          <End Role="DetailTransaction" Type="LaundryModel.DetailTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HeaderTransaction">
+              <PropertyRef Name="TransactionId" />
+            </Principal>
+            <Dependent Role="DetailTransaction">
+              <PropertyRef Name="TransactionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DetailTransaction_PriceList">
+          <End Role="PriceList" Type="LaundryModel.PriceList" Multiplicity="1" />
+          <End Role="DetailTransaction" Type="LaundryModel.DetailTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PriceList">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="DetailTransaction">
+              <PropertyRef Name="Productid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HeaderTransaction_Users">
+          <End Role="Users" Type="LaundryModel.User" Multiplicity="0..1" />
+          <End Role="HeaderTransaction" Type="LaundryModel.HeaderTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="HeaderTransaction">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Review_PriceList">
+          <End Role="PriceList" Type="LaundryModel.PriceList" Multiplicity="0..1" />
+          <End Role="Review" Type="LaundryModel.Review" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PriceList">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="Review">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Review_Users">
+          <End Role="Users" Type="LaundryModel.User" Multiplicity="0..1" />
+          <End Role="Review" Type="LaundryModel.Review" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Review">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LaundryModelStoreContainer" CdmEntityContainer="LaundryEntities">
+          <EntitySetMapping Name="DetailTransactions">
+            <EntityTypeMapping TypeName="LaundryModel.DetailTransaction">
+              <MappingFragment StoreEntitySet="DetailTransaction">
+                <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+                <ScalarProperty Name="Productid" ColumnName="Productid" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HeaderTransactions">
+            <EntityTypeMapping TypeName="LaundryModel.HeaderTransaction">
+              <MappingFragment StoreEntitySet="HeaderTransaction">
+                <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PriceLists">
+            <EntityTypeMapping TypeName="LaundryModel.PriceList">
+              <MappingFragment StoreEntitySet="PriceList">
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductPrice" ColumnName="ProductPrice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reviews">
+            <EntityTypeMapping TypeName="LaundryModel.Review">
+              <MappingFragment StoreEntitySet="Review">
+                <ScalarProperty Name="ReviewId" ColumnName="ReviewId" />
+                <ScalarProperty Name="Review1" ColumnName="Review" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="LaundryModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+                <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+                <ScalarProperty Name="UserAddress" ColumnName="UserAddress" />
+                <ScalarProperty Name="UserPhoneNumber" ColumnName="UserPhoneNumber" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model1">
+        <EntityTypeShape EntityType="LaundryModel.DetailTransaction" Width="1.5" PointX="5.25" PointY="3.75" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaundryModel.HeaderTransaction" Width="1.5" PointX="3" PointY="3.875" Height="1.9802864583333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaundryModel.PriceList" Width="1.5" PointX="0.75" PointY="7.625" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaundryModel.Review" Width="1.5" PointX="3" PointY="0.75" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaundryModel.User" Width="1.5" PointX="0.75" PointY="3.5" Height="2.7494921875" IsExpanded="true" />
+        <AssociationConnector Association="LaundryModel.FK_DetailTransaction_HeaderTransaction" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="4.8651432291666667" />
+          <ConnectorPoint PointX="5.25" PointY="4.8651432291666667" />
+        </AssociationConnector>
+        <AssociationConnector Association="LaundryModel.FK_DetailTransaction_PriceList" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="8.6151432291666659" />
+          <ConnectorPoint PointX="6" PointY="8.6151432291666659" />
+          <ConnectorPoint PointX="6" PointY="5.922587890625" />
+        </AssociationConnector>
+        <AssociationConnector Association="LaundryModel.FK_HeaderTransaction_Users" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="4.8651432291666667" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="4.8651432291666659" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="4.8651432291666667" />
+          <ConnectorPoint PointX="3" PointY="4.8651432291666667" />
+        </AssociationConnector>
+        <AssociationConnector Association="LaundryModel.FK_Review_PriceList" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="7.625" />
+          <ConnectorPoint PointX="2.625" PointY="7.25" />
+          <ConnectorPoint PointX="2.625" PointY="1.8362939453124998" />
+          <ConnectorPoint PointX="3" PointY="1.8362939453124998" />
+        </AssociationConnector>
+        <AssociationConnector Association="LaundryModel.FK_Review_Users" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.5" PointY="3.5" />
+          <ConnectorPoint PointX="1.5" PointY="2.4106934179687505" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="2.41069341796875" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="2.4106934179687505" />
+          <ConnectorPoint PointX="3" PointY="2.4106934179687505" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

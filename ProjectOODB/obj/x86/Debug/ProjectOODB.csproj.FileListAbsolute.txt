@@ -1,0 +1,12 @@
+C:\Users\Ervan\documents\visual studio 2010\Projects\ProjectOODB\ProjectOODB\bin\Debug\ProjectOODB.exe.config
+C:\Users\Ervan\Documents\Visual Studio 2010\Projects\ProjectOODB\ProjectOODB\bin\Debug\Laundry.mdf
+C:\Users\Ervan\Documents\Visual Studio 2010\Projects\ProjectOODB\ProjectOODB\bin\Debug\Laundry_log.ldf
+C:\Users\Ervan\Documents\Visual Studio 2010\Projects\ProjectOODB\ProjectOODB\bin\Debug\ProjectOODB.exe
+C:\Users\Ervan\Documents\Visual Studio 2010\Projects\ProjectOODB\ProjectOODB\bin\Debug\ProjectOODB.pdb
+C:\Users\Ervan\Documents\Visual Studio 2010\Projects\ProjectOODB\ProjectOODB\obj\x86\Debug\ProjectOODB.Login.resources
+C:\Users\Ervan\Documents\Visual Studio 2010\Projects\ProjectOODB\ProjectOODB\obj\x86\Debug\ProjectOODB.Properties.Resources.resources
+C:\Users\Ervan\Documents\Visual Studio 2010\Projects\ProjectOODB\ProjectOODB\obj\x86\Debug\ProjectOODB.csproj.GenerateResource.Cache
+C:\Users\Ervan\Documents\Visual Studio 2010\Projects\ProjectOODB\ProjectOODB\obj\x86\Debug\ProjectOODB.exe
+C:\Users\Ervan\Documents\Visual Studio 2010\Projects\ProjectOODB\ProjectOODB\obj\x86\Debug\ProjectOODB.pdb
+C:\Users\Ervan\Documents\Visual Studio 2010\Projects\ProjectOODB\ProjectOODB\obj\x86\Debug\ProjectOODB.Register.resources
+C:\Users\Ervan\documents\visual studio 2010\Projects\ProjectOODB\ProjectOODB\obj\x86\Debug\ProjectOODB.Home.resources
