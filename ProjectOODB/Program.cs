@@ -15,7 +15,7 @@ namespace ProjectOODB
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MasterLaundryForm());
+            Application.Run(new Login());
         }
     }
 }

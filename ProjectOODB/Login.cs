@@ -11,6 +11,7 @@ namespace ProjectOODB
 {
     public partial class Login : Form
     {
+        String role = "";
         public Login()
         {
             InitializeComponent();
@@ -49,7 +50,12 @@ namespace ProjectOODB
                              select x).ToList().Count;
                 if (count > 0)
                 {
+                    role = (from x in laundry.Users where x.UserPassword == password && x.UserEmail == email select x.RoleName).First().ToString();
                     MessageBox.Show("Logged in!");
+                    Home home = new Home(role);
+                    this.Hide();
+                    home.ShowDialog();
+                    this.Close();
                 }
                 else
                 {
@@ -61,5 +67,6 @@ namespace ProjectOODB
                 MessageBox.Show(errmsg);
             }
         }
+
     }
 }

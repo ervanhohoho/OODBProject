@@ -32,11 +32,11 @@
             this.productsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.orderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.giveReviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.manageProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -75,6 +75,12 @@
             this.giveReviewToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.giveReviewToolStripMenuItem.Text = "Give Review";
             // 
+            // manageProductToolStripMenuItem
+            // 
+            this.manageProductToolStripMenuItem.Name = "manageProductToolStripMenuItem";
+            this.manageProductToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.manageProductToolStripMenuItem.Text = "Manage Product";
+            // 
             // transactionToolStripMenuItem
             // 
             this.transactionToolStripMenuItem.Name = "transactionToolStripMenuItem";
@@ -102,12 +108,7 @@
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
             this.logoutToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
-            // 
-            // manageProductToolStripMenuItem
-            // 
-            this.manageProductToolStripMenuItem.Name = "manageProductToolStripMenuItem";
-            this.manageProductToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.manageProductToolStripMenuItem.Text = "Manage Product";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // manageUserToolStripMenuItem
             // 

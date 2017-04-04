@@ -9,5 +9,6 @@ C:\Users\Ervan\Documents\Visual Studio 2010\Projects\ProjectOODB\ProjectOODB\obj
 C:\Users\Ervan\Documents\Visual Studio 2010\Projects\ProjectOODB\ProjectOODB\obj\x86\Debug\ProjectOODB.exe
 C:\Users\Ervan\Documents\Visual Studio 2010\Projects\ProjectOODB\ProjectOODB\obj\x86\Debug\ProjectOODB.pdb
 C:\Users\Ervan\Documents\Visual Studio 2010\Projects\ProjectOODB\ProjectOODB\obj\x86\Debug\ProjectOODB.Register.resources
-C:\Users\Ervan\documents\visual studio 2010\Projects\ProjectOODB\ProjectOODB\obj\x86\Debug\ProjectOODB.HomeMember.resources
 C:\Users\Ervan\documents\visual studio 2010\Projects\ProjectOODB\ProjectOODB\obj\x86\Debug\ProjectOODB.MasterLaundryForm.resources
+C:\Users\Ervan\documents\visual studio 2010\Projects\ProjectOODB\ProjectOODB\obj\x86\Debug\ProjectOODB.csprojResolveAssemblyReference.cache
+C:\Users\Ervan\documents\visual studio 2010\Projects\ProjectOODB\ProjectOODB\obj\x86\Debug\ProjectOODB.Home.resources

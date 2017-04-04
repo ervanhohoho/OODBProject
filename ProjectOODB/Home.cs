@@ -11,9 +11,29 @@ namespace ProjectOODB
 {
     public partial class Home : Form
     {
-        public Home()
+        public String role;
+        public Home(String trole)
         {
             InitializeComponent();
+            role = trole;
+            if (role == "Member")
+            {
+                manageProductToolStripMenuItem.Visible = false;
+                manageUserToolStripMenuItem.Visible = false;
+            }
+            else if (role == "Admin")
+            {
+                orderToolStripMenuItem.Visible = false;
+                giveReviewToolStripMenuItem.Visible = false;
+            }
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            this.Hide();
+            login.ShowDialog();
+            this.Close();
         }
     }
 }
