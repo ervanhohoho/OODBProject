@@ -35,5 +35,11 @@ namespace ProjectOODB
             login.ShowDialog();
             this.Close();
         }
+
+        private void manageProductToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MasterLaundryForm mlf = new MasterLaundryForm();
+            mlf.ShowDialog();
+        }
     }
 }
