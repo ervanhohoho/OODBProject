@@ -63,7 +63,6 @@
             this.label1.Size = new System.Drawing.Size(291, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Master Laundry Form";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // detailGroupBox
             // 
@@ -95,7 +94,7 @@
             this.nameTextBox.Location = new System.Drawing.Point(165, 77);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(112, 26);
-            this.nameTextBox.TabIndex = 3;
+            this.nameTextBox.TabIndex = 2;
             // 
             // idTextBox
             // 
@@ -103,7 +102,7 @@
             this.idTextBox.Location = new System.Drawing.Point(165, 45);
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.Size = new System.Drawing.Size(112, 26);
-            this.idTextBox.TabIndex = 3;
+            this.idTextBox.TabIndex = 1;
             // 
             // priceLabel
             // 
@@ -154,9 +153,10 @@
             this.cancelButton.Location = new System.Drawing.Point(137, 96);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(91, 30);
-            this.cancelButton.TabIndex = 0;
+            this.cancelButton.TabIndex = 5;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // saveButton
             // 
@@ -165,7 +165,7 @@
             this.saveButton.Location = new System.Drawing.Point(137, 60);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(91, 30);
-            this.saveButton.TabIndex = 0;
+            this.saveButton.TabIndex = 4;
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
@@ -176,9 +176,10 @@
             this.deleteButton.Location = new System.Drawing.Point(20, 114);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(91, 30);
-            this.deleteButton.TabIndex = 0;
+            this.deleteButton.TabIndex = 3;
             this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // updateButton
             // 
@@ -186,7 +187,7 @@
             this.updateButton.Location = new System.Drawing.Point(20, 77);
             this.updateButton.Name = "updateButton";
             this.updateButton.Size = new System.Drawing.Size(91, 30);
-            this.updateButton.TabIndex = 0;
+            this.updateButton.TabIndex = 2;
             this.updateButton.Text = "Update";
             this.updateButton.UseVisualStyleBackColor = true;
             this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
@@ -197,7 +198,7 @@
             this.insertButton.Location = new System.Drawing.Point(20, 41);
             this.insertButton.Name = "insertButton";
             this.insertButton.Size = new System.Drawing.Size(91, 30);
-            this.insertButton.TabIndex = 0;
+            this.insertButton.TabIndex = 1;
             this.insertButton.Text = "Insert";
             this.insertButton.UseVisualStyleBackColor = true;
             this.insertButton.Click += new System.EventHandler(this.insertButton_Click);
@@ -207,8 +208,10 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 71);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(577, 179);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // laundryDataSetBindingSource
             // 

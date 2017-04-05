@@ -115,6 +115,7 @@
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(195, 20);
             this.usernameTextBox.TabIndex = 2;
+            this.usernameTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.pressEnter);
             // 
             // passwordTextBox
             // 
@@ -122,6 +123,8 @@
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(195, 20);
             this.passwordTextBox.TabIndex = 3;
+            this.passwordTextBox.UseSystemPasswordChar = true;
+            this.passwordTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.pressEnter);
             // 
             // confirmPasswordTextBox
             // 
@@ -129,6 +132,8 @@
             this.confirmPasswordTextBox.Name = "confirmPasswordTextBox";
             this.confirmPasswordTextBox.Size = new System.Drawing.Size(195, 20);
             this.confirmPasswordTextBox.TabIndex = 4;
+            this.confirmPasswordTextBox.UseSystemPasswordChar = true;
+            this.confirmPasswordTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.pressEnter);
             // 
             // emailTextBox
             // 
@@ -136,6 +141,7 @@
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(195, 20);
             this.emailTextBox.TabIndex = 5;
+            this.emailTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.pressEnter);
             // 
             // phoneTextBox
             // 
@@ -143,6 +149,7 @@
             this.phoneTextBox.Name = "phoneTextBox";
             this.phoneTextBox.Size = new System.Drawing.Size(195, 20);
             this.phoneTextBox.TabIndex = 6;
+            this.phoneTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.pressEnter);
             // 
             // addressTextBox
             // 
@@ -151,6 +158,7 @@
             this.addressTextBox.Size = new System.Drawing.Size(195, 59);
             this.addressTextBox.TabIndex = 7;
             this.addressTextBox.Text = "";
+            this.addressTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.pressEnter);
             // 
             // pindahLogin
             // 

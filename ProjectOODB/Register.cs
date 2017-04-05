@@ -27,6 +27,11 @@ namespace ProjectOODB
         {
             pindahKeLogin();   
         }
+        private void pressEnter(object s, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+                registerButton.PerformClick();
+        }
         private void registerButton_Click(object sender, EventArgs e)
         {
             string errmsg="";
@@ -133,14 +138,8 @@ namespace ProjectOODB
                 }
                 newUser.RoleName = "Member";
                 laundry.AddToUsers(newUser);
-                try
-                {
-                    laundry.SaveChanges();
-                }
-                catch (System.Data.UpdateException ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                } pindahKeLogin();
+                laundry.SaveChanges();
+                pindahKeLogin();
             }
         }
     }

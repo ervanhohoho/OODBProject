@@ -16,7 +16,7 @@ namespace ProjectOODB
         {
             InitializeComponent();
         }
-
+        
         private void pindahRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Register reg = new Register();
@@ -24,7 +24,10 @@ namespace ProjectOODB
             reg.ShowDialog();
             this.Close();
         }
-
+        public void pressEnter()
+        {
+            loginButton.PerformClick();
+        }
         private void loginButton_Click(object sender, EventArgs e)
         {
             LaundryEntities laundry = new LaundryEntities();
@@ -51,7 +54,6 @@ namespace ProjectOODB
                 if (count > 0)
                 {
                     role = (from x in laundry.Users where x.UserPassword == password && x.UserEmail == email select x.RoleName).First().ToString();
-                    MessageBox.Show("Logged in!");
                     Home home = new Home(role);
                     this.Hide();
                     home.ShowDialog();
@@ -59,13 +61,25 @@ namespace ProjectOODB
                 }
                 else
                 {
-                    MessageBox.Show("No User Found!");
+                    MessageBox.Show("Email or Password is incorrect");
                 }
             }
             else
             {
                 MessageBox.Show(errmsg);
             }
+        }
+
+        private void emailTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+                pressEnter();
+        }
+
+        private void passwordTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+                pressEnter();
         }
 
     }
