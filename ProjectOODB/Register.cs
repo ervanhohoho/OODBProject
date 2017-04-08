@@ -121,9 +121,16 @@ namespace ProjectOODB
                 newUser.UserPhoneNumber = phoneTextBox.Text;
                 newUser.UserEmail = emailTextBox.Text;
                 newUser.UserAddress = addressTextBox.Text;
-                int total = (from x in laundry.Users
-                            select x).ToList().Count();
-                ++total;
+                List<User>query = (from x in laundry.Users
+                             select x).ToList();
+                int total;
+                if (query.Count != 0)
+                {
+                    total = Convert.ToInt32(query[query.Count - 1].UserID.ToString().Substring(2, 3));
+                    ++total;
+                }
+                else
+                    total = 1;
                 if (total < 10)
                 {
                     newUser.UserID = "US00" + total;

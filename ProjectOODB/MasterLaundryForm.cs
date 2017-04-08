@@ -118,8 +118,18 @@ namespace ProjectOODB
             idTextBox.Enabled = true;
             nameTextBox.Enabled = true;
             priceTextBox.Enabled = true;
-            int count = (from x in laundry.PriceLists
-                         select x).ToList().Count() + 1;
+            List<PriceList> query = (from x in laundry.PriceLists
+                                     select x).ToList();
+            int count;
+            if (query.Count != 0)
+            {
+                count = Convert.ToInt32(query[query.Count - 1].ProductID.ToString().Substring(2, 3));
+                ++count;
+            }
+            else
+            {
+                count = 1;
+            }
             if (count < 10)
             {
                 idTextBox.Text = "PD00" + count;
