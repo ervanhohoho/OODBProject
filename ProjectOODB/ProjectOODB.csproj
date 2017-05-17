@@ -64,6 +64,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DoTransaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoTransaction.Designer.cs">
+      <DependentUpon>DoTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReviewForm.Designer.cs">
+      <DependentUpon>ReviewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForm.Designer.cs">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +124,24 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewTransaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewTransaction.Designer.cs">
+      <DependentUpon>ViewTransaction.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoTransaction.resx">
+      <DependentUpon>DoTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReviewForm.resx">
+      <DependentUpon>ReviewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForm.resx">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,6 +162,9 @@
     </Compile>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewTransaction.resx">
+      <DependentUpon>ViewTransaction.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="LaundryDataSet.xsc">

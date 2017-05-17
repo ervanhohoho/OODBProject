@@ -26,3 +26,8 @@ C:\Users\Juliana\Documents\OODBProject\ProjectOODB\obj\x86\Debug\ProjectOODB.Mas
 C:\Users\Juliana\Documents\OODBProject\ProjectOODB\obj\x86\Debug\ProjectOODB.Properties.Resources.resources
 C:\Users\Juliana\Documents\OODBProject\ProjectOODB\obj\x86\Debug\ProjectOODB.Register.resources
 C:\Users\Juliana\Documents\OODBProject\ProjectOODB\obj\x86\Debug\ProjectOODB.csproj.GenerateResource.Cache
+C:\Users\Ervan\Documents\Visual Studio 2010\Projects\ProjectOODB\ProjectOODB\obj\x86\Debug\ProjectOODB.UserForm.resources
+C:\Users\Ervan\documents\visual studio 2010\Projects\ProjectOODB\ProjectOODB\obj\x86\Debug\ProjectOODB.ViewTransaction.resources
+C:\Users\Ervan\documents\visual studio 2010\Projects\ProjectOODB\ProjectOODB\obj\x86\Debug\ProjectOODB.ChangePassword.resources
+C:\Users\Ervan\documents\visual studio 2010\Projects\ProjectOODB\ProjectOODB\obj\x86\Debug\ProjectOODB.DoTransaction.resources
+C:\Users\Ervan\documents\visual studio 2010\Projects\ProjectOODB\ProjectOODB\obj\x86\Debug\ProjectOODB.ReviewForm.resources

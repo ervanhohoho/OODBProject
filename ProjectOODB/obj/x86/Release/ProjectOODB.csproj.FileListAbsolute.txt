@@ -9,3 +9,8 @@ C:\Users\Ervan\Documents\Visual Studio 2010\Projects\ProjectOODB\ProjectOODB\obj
 C:\Users\Ervan\Documents\Visual Studio 2010\Projects\ProjectOODB\ProjectOODB\obj\x86\Release\ProjectOODB.csproj.GenerateResource.Cache
 C:\Users\Ervan\Documents\Visual Studio 2010\Projects\ProjectOODB\ProjectOODB\obj\x86\Release\ProjectOODB.exe
 C:\Users\Ervan\Documents\Visual Studio 2010\Projects\ProjectOODB\ProjectOODB\obj\x86\Release\ProjectOODB.pdb
+C:\Users\Ervan\documents\visual studio 2010\Projects\ProjectOODB\ProjectOODB\obj\x86\Release\ProjectOODB.ChangePassword.resources
+C:\Users\Ervan\documents\visual studio 2010\Projects\ProjectOODB\ProjectOODB\obj\x86\Release\ProjectOODB.UserForm.resources
+C:\Users\Ervan\documents\visual studio 2010\Projects\ProjectOODB\ProjectOODB\obj\x86\Release\ProjectOODB.Home.resources
+C:\Users\Ervan\documents\visual studio 2010\Projects\ProjectOODB\ProjectOODB\obj\x86\Release\ProjectOODB.MasterLaundryForm.resources
+C:\Users\Ervan\documents\visual studio 2010\Projects\ProjectOODB\ProjectOODB\obj\x86\Release\ProjectOODB.ViewTransaction.resources

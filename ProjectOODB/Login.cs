@@ -54,7 +54,8 @@ namespace ProjectOODB
                 if (count > 0)
                 {
                     role = (from x in laundry.Users where x.UserPassword == password && x.UserEmail == email select x.RoleName).First().ToString();
-                    Home home = new Home(role);
+                    String userId = (from x in laundry.Users where x.UserPassword == password && x.UserEmail == email select x.UserID).First().ToString();
+                    Home home = new Home(role,userId);
                     this.Hide();
                     home.ShowDialog();
                     this.Close();

@@ -11,10 +11,13 @@ namespace ProjectOODB
 {
     public partial class Home : Form
     {
+
+        public String userId;
         public String role;
-        public Home(String trole)
+        public Home(String trole, String userId)
         {
             InitializeComponent();
+            this.userId = userId;
             role = trole;
             if (role == "Member")
             {
@@ -39,7 +42,36 @@ namespace ProjectOODB
         private void manageProductToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MasterLaundryForm mlf = new MasterLaundryForm();
-            mlf.ShowDialog();
+            mlf.MdiParent = this;
+            mlf.Show();
+        }
+
+        private void manageUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UserForm usr = new UserForm();
+            usr.MdiParent = this;
+            usr.Show();
+        }
+
+        private void transactionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ViewTransaction vtr = new ViewTransaction(role, userId);
+            vtr.MdiParent = this;
+            vtr.Show();
+        }
+
+        private void giveReviewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReviewForm rv = new ReviewForm(userId);
+            rv.MdiParent = this;
+            rv.Show();
+        }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangePassword cp = new ChangePassword(userId);
+            cp.MdiParent = this;
+            cp.Show();
         }
     }
 }

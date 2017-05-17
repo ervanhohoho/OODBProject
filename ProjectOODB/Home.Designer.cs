@@ -74,6 +74,7 @@
             this.giveReviewToolStripMenuItem.Name = "giveReviewToolStripMenuItem";
             this.giveReviewToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.giveReviewToolStripMenuItem.Text = "Give Review";
+            this.giveReviewToolStripMenuItem.Click += new System.EventHandler(this.giveReviewToolStripMenuItem_Click);
             // 
             // manageProductToolStripMenuItem
             // 
@@ -87,6 +88,7 @@
             this.transactionToolStripMenuItem.Name = "transactionToolStripMenuItem";
             this.transactionToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
             this.transactionToolStripMenuItem.Text = "Transaction";
+            this.transactionToolStripMenuItem.Click += new System.EventHandler(this.transactionToolStripMenuItem_Click);
             // 
             // profileToolStripMenuItem
             // 
@@ -103,6 +105,7 @@
             this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
             this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.changePasswordToolStripMenuItem.Text = "Change Password";
+            this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
@@ -116,6 +119,7 @@
             this.manageUserToolStripMenuItem.Name = "manageUserToolStripMenuItem";
             this.manageUserToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.manageUserToolStripMenuItem.Text = "Manage User";
+            this.manageUserToolStripMenuItem.Click += new System.EventHandler(this.manageUserToolStripMenuItem_Click);
             // 
             // Home
             // 
@@ -123,9 +127,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(607, 420);
             this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
+            this.MinimizeBox = false;
             this.Name = "Home";
             this.Text = "Home";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
