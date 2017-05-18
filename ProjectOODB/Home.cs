@@ -78,5 +78,12 @@ namespace ProjectOODB
         {
 
         }
+
+        private void orderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DoTransaction dt = new DoTransaction(userId);
+            dt.MdiParent = this;
+            dt.Show();
+        }
     }
 }

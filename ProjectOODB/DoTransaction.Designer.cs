@@ -33,30 +33,31 @@
             this.tbTransactionID = new System.Windows.Forms.TextBox();
             this.tbUserID = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.tbLaundryID = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tbLaundryForm = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tbPrice = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.tbListQty = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.tbPrice = new System.Windows.Forms.TextBox();
+            this.tbLaundryName = new System.Windows.Forms.TextBox();
+            this.tbLaundryID = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.tbProductID = new System.Windows.Forms.TextBox();
-            this.tbCartQty = new System.Windows.Forms.TextBox();
-            this.tbGrandTotal = new System.Windows.Forms.TextBox();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.btnCheckOut = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.tbGrandTotal = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tbCartQty = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tbProductID = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.qtyNumeric = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qtyNumeric)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -93,10 +94,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.qtyNumeric);
             this.groupBox1.Controls.Add(this.btnAdd);
-            this.groupBox1.Controls.Add(this.tbListQty);
             this.groupBox1.Controls.Add(this.tbPrice);
-            this.groupBox1.Controls.Add(this.tbLaundryForm);
+            this.groupBox1.Controls.Add(this.tbLaundryName);
             this.groupBox1.Controls.Add(this.tbLaundryID);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
@@ -110,54 +111,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "List Laundry";
             // 
-            // dataGridView1
+            // btnAdd
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 20);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(301, 194);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(335, 34);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 13);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Laundry ID";
-            // 
-            // tbLaundryID
-            // 
-            this.tbLaundryID.Location = new System.Drawing.Point(429, 29);
-            this.tbLaundryID.Name = "tbLaundryID";
-            this.tbLaundryID.Size = new System.Drawing.Size(130, 20);
-            this.tbLaundryID.TabIndex = 2;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(335, 67);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 13);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Laundry Form";
-            // 
-            // tbLaundryForm
-            // 
-            this.tbLaundryForm.Location = new System.Drawing.Point(429, 62);
-            this.tbLaundryForm.Name = "tbLaundryForm";
-            this.tbLaundryForm.Size = new System.Drawing.Size(130, 20);
-            this.tbLaundryForm.TabIndex = 2;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(335, 99);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(31, 13);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Price";
+            this.btnAdd.Location = new System.Drawing.Point(401, 163);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(104, 51);
+            this.btnAdd.TabIndex = 3;
+            this.btnAdd.Text = "Add To Cart";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // tbPrice
             // 
@@ -165,6 +127,20 @@
             this.tbPrice.Name = "tbPrice";
             this.tbPrice.Size = new System.Drawing.Size(130, 20);
             this.tbPrice.TabIndex = 2;
+            // 
+            // tbLaundryName
+            // 
+            this.tbLaundryName.Location = new System.Drawing.Point(429, 62);
+            this.tbLaundryName.Name = "tbLaundryName";
+            this.tbLaundryName.Size = new System.Drawing.Size(130, 20);
+            this.tbLaundryName.TabIndex = 2;
+            // 
+            // tbLaundryID
+            // 
+            this.tbLaundryID.Location = new System.Drawing.Point(429, 29);
+            this.tbLaundryID.Name = "tbLaundryID";
+            this.tbLaundryID.Size = new System.Drawing.Size(130, 20);
+            this.tbLaundryID.TabIndex = 2;
             // 
             // label6
             // 
@@ -175,21 +151,41 @@
             this.label6.TabIndex = 1;
             this.label6.Text = "Quantity";
             // 
-            // tbListQty
+            // label5
             // 
-            this.tbListQty.Location = new System.Drawing.Point(429, 128);
-            this.tbListQty.Name = "tbListQty";
-            this.tbListQty.Size = new System.Drawing.Size(130, 20);
-            this.tbListQty.TabIndex = 2;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(335, 99);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(31, 13);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Price";
             // 
-            // btnAdd
+            // label4
             // 
-            this.btnAdd.Location = new System.Drawing.Point(401, 163);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(104, 51);
-            this.btnAdd.TabIndex = 3;
-            this.btnAdd.Text = "Add To Cart";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(335, 67);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(76, 13);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Laundry Name";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(335, 34);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Laundry ID";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(7, 20);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(301, 194);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // groupBox2
             // 
@@ -209,6 +205,26 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cart";
             // 
+            // btnCheckOut
+            // 
+            this.btnCheckOut.Location = new System.Drawing.Point(456, 144);
+            this.btnCheckOut.Name = "btnCheckOut";
+            this.btnCheckOut.Size = new System.Drawing.Size(103, 42);
+            this.btnCheckOut.TabIndex = 3;
+            this.btnCheckOut.Text = "Check Out";
+            this.btnCheckOut.UseVisualStyleBackColor = true;
+            this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(338, 144);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(103, 42);
+            this.btnDelete.TabIndex = 3;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -216,6 +232,14 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(301, 183);
             this.dataGridView2.TabIndex = 0;
+            this.dataGridView2.SelectionChanged += new System.EventHandler(this.dataGridView2_SelectionChanged);
+            // 
+            // tbGrandTotal
+            // 
+            this.tbGrandTotal.Location = new System.Drawing.Point(429, 97);
+            this.tbGrandTotal.Name = "tbGrandTotal";
+            this.tbGrandTotal.Size = new System.Drawing.Size(130, 20);
+            this.tbGrandTotal.TabIndex = 2;
             // 
             // label7
             // 
@@ -226,6 +250,13 @@
             this.label7.TabIndex = 1;
             this.label7.Text = "Product ID";
             // 
+            // tbCartQty
+            // 
+            this.tbCartQty.Location = new System.Drawing.Point(429, 65);
+            this.tbCartQty.Name = "tbCartQty";
+            this.tbCartQty.Size = new System.Drawing.Size(130, 20);
+            this.tbCartQty.TabIndex = 2;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -234,6 +265,13 @@
             this.label8.Size = new System.Drawing.Size(46, 13);
             this.label8.TabIndex = 1;
             this.label8.Text = "Quantity";
+            // 
+            // tbProductID
+            // 
+            this.tbProductID.Location = new System.Drawing.Point(429, 32);
+            this.tbProductID.Name = "tbProductID";
+            this.tbProductID.Size = new System.Drawing.Size(130, 20);
+            this.tbProductID.TabIndex = 2;
             // 
             // label9
             // 
@@ -244,44 +282,12 @@
             this.label9.TabIndex = 1;
             this.label9.Text = "Grand Total";
             // 
-            // tbProductID
+            // qtyNumeric
             // 
-            this.tbProductID.Location = new System.Drawing.Point(429, 32);
-            this.tbProductID.Name = "tbProductID";
-            this.tbProductID.Size = new System.Drawing.Size(130, 20);
-            this.tbProductID.TabIndex = 2;
-            // 
-            // tbCartQty
-            // 
-            this.tbCartQty.Location = new System.Drawing.Point(429, 65);
-            this.tbCartQty.Name = "tbCartQty";
-            this.tbCartQty.Size = new System.Drawing.Size(130, 20);
-            this.tbCartQty.TabIndex = 2;
-            // 
-            // tbGrandTotal
-            // 
-            this.tbGrandTotal.Location = new System.Drawing.Point(429, 97);
-            this.tbGrandTotal.Name = "tbGrandTotal";
-            this.tbGrandTotal.Size = new System.Drawing.Size(130, 20);
-            this.tbGrandTotal.TabIndex = 2;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(338, 144);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(103, 42);
-            this.btnDelete.TabIndex = 3;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            // 
-            // btnCheckOut
-            // 
-            this.btnCheckOut.Location = new System.Drawing.Point(456, 144);
-            this.btnCheckOut.Name = "btnCheckOut";
-            this.btnCheckOut.Size = new System.Drawing.Size(103, 42);
-            this.btnCheckOut.TabIndex = 3;
-            this.btnCheckOut.Text = "Check Out";
-            this.btnCheckOut.UseVisualStyleBackColor = true;
+            this.qtyNumeric.Location = new System.Drawing.Point(429, 131);
+            this.qtyNumeric.Name = "qtyNumeric";
+            this.qtyNumeric.Size = new System.Drawing.Size(120, 20);
+            this.qtyNumeric.TabIndex = 4;
             // 
             // DoTransaction
             // 
@@ -303,6 +309,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qtyNumeric)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -317,9 +324,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.TextBox tbListQty;
         private System.Windows.Forms.TextBox tbPrice;
-        private System.Windows.Forms.TextBox tbLaundryForm;
+        private System.Windows.Forms.TextBox tbLaundryName;
         private System.Windows.Forms.TextBox tbLaundryID;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -335,5 +341,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox tbProductID;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.NumericUpDown qtyNumeric;
     }
 }
