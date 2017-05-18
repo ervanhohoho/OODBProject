@@ -73,5 +73,10 @@ namespace ProjectOODB
             cp.MdiParent = this;
             cp.Show();
         }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
