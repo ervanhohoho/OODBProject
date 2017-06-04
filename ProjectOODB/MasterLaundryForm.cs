@@ -201,8 +201,12 @@ namespace ProjectOODB
                 nameTextBox.Enabled = true;
                 priceTextBox.Enabled = true;
                 updateDataOnTextBox();
-                deleteData();
-                updateTable();
+                DialogResult dialogResult = MessageBox.Show("Are You Sure?", "Delete Data", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    deleteData();
+                    updateTable();
+                }
                 resetState();
             }
         }

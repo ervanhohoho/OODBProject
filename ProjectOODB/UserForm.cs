@@ -270,8 +270,16 @@ namespace ProjectOODB
                 User us = (from x in laundry.Users
                             where x.UserID == userid
                             select x).SingleOrDefault();
-                laundry.DeleteObject(us);
-                laundry.SaveChanges();
+                DialogResult dialogResult = MessageBox.Show("Sure", "Some Title", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    laundry.DeleteObject(us);
+                    laundry.SaveChanges();
+                }
+                else
+                {
+                    MessageBox.Show("Cancelled");
+                }
                 refreshTable();
                 resetState();
                 

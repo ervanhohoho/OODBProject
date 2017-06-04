@@ -81,14 +81,7 @@ namespace ProjectOODB
             
         }
 
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
-        {
-            int rowIndex = dataGridView1.CurrentCell.RowIndex;
-            DataGridViewRow selectedRow = dataGridView1.Rows[rowIndex];
-            tbLaundryID.Text = selectedRow.Cells[0].Value.ToString();
-            tbLaundryName.Text = selectedRow.Cells[1].Value.ToString();
-            tbPrice.Text = selectedRow.Cells[2].Value.ToString();
-        }
+        
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -135,12 +128,28 @@ namespace ProjectOODB
             var query2 = (from x in laundry.HeaderTransactions
                           where x.TransactionId == transactionId
                           select x).FirstOrDefault();
-            laundry.DeleteObject(query);
-            laundry.DeleteObject(query2);
-            laundry.SaveChanges();
-            loadTable();
+            DialogResult dialogResult = MessageBox.Show("Are You Sure?", "Delete Data", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                laundry.DeleteObject(query);
+                laundry.DeleteObject(query2);
+                laundry.SaveChanges();
+                loadTable();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                resetState();
+            }
+            
         }
-
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            int rowIndex = dataGridView1.CurrentCell.RowIndex;
+            DataGridViewRow selectedRow = dataGridView1.Rows[rowIndex];
+            tbLaundryID.Text = selectedRow.Cells[0].Value.ToString();
+            tbLaundryName.Text = selectedRow.Cells[1].Value.ToString();
+            tbPrice.Text = selectedRow.Cells[2].Value.ToString();
+        }
         private void dataGridView2_SelectionChanged(object sender, EventArgs e)
         {
             int rowIndex = dataGridView2.CurrentCell.RowIndex;

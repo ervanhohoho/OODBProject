@@ -103,7 +103,7 @@ namespace ProjectOODB
                         count++;
                     }
                 }
-                if (emailTextBox.Text[0] == '@' || emailTextBox.Text[emailTextBox.Text.Length - 1] == '@' || !emailTextBox.Text.Contains("@") || !emailTextBox.Text.Contains(".") || count > 1 || emailTextBox.Text.Contains("@."))
+                if (emailTextBox.Text[0] == '@' || emailTextBox.Text[emailTextBox.Text.Length - 1] == '@' || !emailTextBox.Text.Contains("@") || !emailTextBox.Text.Contains(".") || count > 1 || emailTextBox.Text.Contains("@.") || emailTextBox.Text.Contains(".@"))
                 {
                     errmsg += "Email is not valid\n";
                     flag = false;
