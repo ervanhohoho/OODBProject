@@ -21,10 +21,12 @@ namespace ProjectOODB
 
         private void button1_Click(object sender, EventArgs e)
         {
+          
             User user = (from x in laundry.Users
                          where x.UserID == userId
                          select x).FirstOrDefault();
             bool flag = true;
+            String userEmail = user.UserEmail;
             if (tbEmail.Text == "")
             {
                 MessageBox.Show("Email must be filled");
@@ -48,6 +50,11 @@ namespace ProjectOODB
             if (tbNew.Text != tbConfirm.Text)
             {
                 MessageBox.Show("New password and confirm password must be the same");
+                flag = false;
+            }
+            if (userEmail != tbEmail.Text)
+            {
+                MessageBox.Show("Email is wrong!");
                 flag = false;
             }
             if (flag)

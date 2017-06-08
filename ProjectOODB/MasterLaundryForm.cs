@@ -35,6 +35,7 @@ namespace ProjectOODB
         }
         public void resetState()
         {
+            dataGridView1.Enabled = true;
             insertButton.Enabled = true;
             updateButton.Enabled = true;
             deleteButton.Enabled = true;
@@ -115,12 +116,13 @@ namespace ProjectOODB
             insertButtonClicked = true;
             updateButtonClicked = deleteButtonClicked = false;
 
-            idTextBox.Enabled = true;
+            idTextBox.Enabled = false;
             nameTextBox.Enabled = true;
             priceTextBox.Enabled = true;
             List<PriceList> query = (from x in laundry.PriceLists
                                      select x).ToList();
             int count;
+            
             if (query.Count != 0)
             {
                 count = Convert.ToInt32(query[query.Count - 1].ProductID.ToString().Substring(2, 3));
@@ -207,7 +209,10 @@ namespace ProjectOODB
                     deleteData();
                     updateTable();
                 }
-                resetState();
+                else
+                {
+                    resetState();
+                }
             }
         }
 
